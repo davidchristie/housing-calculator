@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React, { PropTypes } from 'react'
 
-import initStore from '../../store'
+import Navigation from '../../containers/Navigation'
 
 class Page extends React.Component {
   render () {
@@ -19,6 +19,7 @@ class Page extends React.Component {
             rel='stylesheet'
           />
         </Head>
+        <Navigation />
         {this.props.children}
       </div>
     )
