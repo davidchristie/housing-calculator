@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.8",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "standard": "^9.0.1"
+  },
+  "name": "housing-calculator",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidchristie/housing-calculator.git"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "version": "0.1.0"
+}
