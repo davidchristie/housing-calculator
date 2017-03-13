@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import withRedux from 'next-redux-wrapper'
 import React from 'react'
 import { Button, Grid, Jumbotron } from 'react-bootstrap'
+
+import initStore from '../store'
 
 class Index extends React.Component {
   render () {
@@ -35,4 +38,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default withRedux(initStore)(Index)
