@@ -75,6 +75,18 @@ const initialState = [
 
 export default (state = initialState, { payload, type }) => {
   switch (type) {
+    case 'SET_ANSWER':
+      return state.map(question => {
+        if (question.id === payload.questionId) {
+          return Object.assign(
+            {},
+            question,
+            {answer: payload.answer}
+          )
+        }
+        return question
+      })
+
     default:
       return state
   }

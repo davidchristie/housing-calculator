@@ -18,10 +18,14 @@ class Question extends React.Component {
             </p>
             <ButtonGroup block vertical>
               {this.props.possibleAnswers.map((possibleAnswer, index) => {
+                const isSelected = possibleAnswer.value === this.props.answer
                 return (
                   <Button
-                    bsStyle='primary'
+                    bsStyle={isSelected ? 'success' : 'primary'}
                     key={index}
+                    onClick={event => {
+                      this.props.setAnswer(possibleAnswer.value)
+                    }}
                   >{possibleAnswer.text}</Button>
                 )
               })}
@@ -34,6 +38,7 @@ class Question extends React.Component {
 }
 
 Question.propTypes = {
+  answer: PropTypes.any,
   description: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   possibleAnswers: PropTypes.arrayOf(
@@ -42,6 +47,7 @@ Question.propTypes = {
       value: PropTypes.any.isRequired
     })
   ),
+  setAnswer: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired
 }
 
