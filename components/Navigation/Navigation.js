@@ -3,6 +3,7 @@ import Router from 'next/router'
 import React, { PropTypes } from 'react'
 import {
   Button,
+  Glyphicon,
   MenuItem,
   Nav,
   Navbar,
@@ -42,7 +43,12 @@ class Navigation extends React.Component {
                         event.preventDefault()
                         Router.push(href)
                       }}
-                    >{question.title}</MenuItem>
+                    >
+                      {question.title}{' '}
+                      {question.answer !== null
+                        ? <Glyphicon glyph='ok' />
+                        : null}
+                    </MenuItem>
                   )
                 })
               }
