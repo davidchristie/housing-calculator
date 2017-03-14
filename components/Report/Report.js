@@ -35,7 +35,13 @@ class Report extends React.Component {
 }
 
 Report.propTypes = {
-  questions: PropTypes.arrayOf(PropTypes.object).isRequired
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      answer: PropTypes.any,
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired
+    })
+  ).isRequired
 }
 
 export default Report
