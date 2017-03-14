@@ -7,13 +7,10 @@ export default (initialState) => {
   if (typeof window === 'undefined') {
     return createStore(reducer, initialState, applyMiddleware(thunk))
   } else {
-    const extension = window.__REDUX_DEVTOOLS_EXTENSION__
-    return createStore(
-      reducer,
-      initialState,
-      compose(
-        applyMiddleware(thunk),
-        extension && extension()
+    const extensionCompose = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    const composeEnhancers = extensionCompose || compose
+    return createStore(reducer, initialState, composeEnhancers(
+        applyMiddleware(thunk)
       )
     )
   }
