@@ -56,7 +56,7 @@ class Navigation extends React.Component {
           </Nav>
           <Nav pullRight>
             <Link href='/report'>
-              <Button bsStyle='success'>
+              <Button>
                 Report
               </Button>
             </Link>
