@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react'
 import {
-  Button,
-  ButtonGroup,
   Grid,
-  Jumbotron
+  Jumbotron,
+  ListGroup,
+  ListGroupItem
 } from 'react-bootstrap'
 
 class Question extends React.Component {
@@ -16,20 +16,20 @@ class Question extends React.Component {
             <p>
               {this.props.description}
             </p>
-            <ButtonGroup block vertical>
+            <ListGroup>
               {this.props.possibleAnswers.map((possibleAnswer, index) => {
-                const isSelected = possibleAnswer.value === this.props.answer
                 return (
-                  <Button
-                    bsStyle={isSelected ? 'success' : 'primary'}
-                    key={index}
+                  <ListGroupItem
+                    active={possibleAnswer.value === this.props.answer}
                     onClick={event => {
                       this.props.setAnswer(possibleAnswer.value)
                     }}
-                  >{possibleAnswer.text}</Button>
+                  >
+                    {possibleAnswer.text}
+                  </ListGroupItem>
                 )
               })}
-            </ButtonGroup>
+            </ListGroup>
           </Jumbotron>
         </Grid>
       </div>

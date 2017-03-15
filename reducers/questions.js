@@ -1,27 +1,27 @@
 const initialState = [
   {
     answer: null,
-    description: 'The first question.',
+    description: 'Which suburb would you like to live in?',
     id: 1,
     possibleAnswers: [
       {
-        text: 'Answer A',
-        value: 'A'
+        text: 'Avondale',
+        value: 'Avondale'
       },
       {
-        text: 'Answer B',
-        value: 'B'
+        text: 'Glendowie',
+        value: 'Glendowie'
       },
       {
-        text: 'Answer C',
-        value: 'C'
+        text: 'Grey Lynn',
+        value: 'Grey Lynn'
       },
       {
-        text: 'Answer D',
-        value: 'D'
+        text: 'Mt Eden',
+        value: 'Mt Eden'
       }
     ],
-    title: 'Question 1'
+    title: 'Location'
   },
   {
     answer: null,

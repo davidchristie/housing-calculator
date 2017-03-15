@@ -19,7 +19,7 @@ class Report extends React.Component {
                 return (
                   <Link href={`/question?id=${question.id}`} key={index}>
                     <ListGroupItem
-                      bsStyle={question.answer === null ? 'danger' : 'success'}
+                      active={question.answer !== null}
                     >
                       {question.title}: {question.answer}
                     </ListGroupItem>
